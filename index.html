@@ -1,12 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Manas Kinkar</title>
+    <!-- Bootstap Links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
 </head>
+<style>
+    body {
+        background-color: rgb(194, 192, 207)
+    }
+
+    img {
+        border-radius: 50%;
+    }
+
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 30px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa-facebook {
+        color: white;
+    }
+
+    .fa-twitter {
+        color: white;
+    }
+
+    .fa-google {
+        color: white;
+    }
+
+    .fa-linkedin {
+        color: white;
+    }
+
+    .fa-youtube {
+        color: white;
+    }
+
+    .fa-instagram {
+        color: white;
+    }
+</style>
+
 <body>
-    <a href="/home.html">home</a>
+    <div class="container" style="padding-top: 5%;padding-left: 3%;">
+        <div class="row">
+            <div class="col" style="padding: 5%;">
+                <img src="https://pbs.twimg.com/profile_images/1119475385396125696/ODuGxOE4_400x400.jpg" alt="Manas">
+            </div>
+            <div class="col" style="padding-top: 12%;">
+                <div style="padding-left: 4%;">
+                    <h2 id="t1"></h2>
+                    <h1 id="t2"></h1>
+                    <h3 id="t3"></h3>
+                </div>
+                <div id="profile_links">
+                    <a href="https://www.facebook.com/manas.kinkar.7" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/ManasKinkar" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="https://www.linkedin.com/in/manas-kinkar001/" class="fa fa-linkedin"></a>
+                    <a href="https://www.youtube.com/user/manask322" class="fa fa-youtube"></a>
+                    <a href="https://www.instagram.com/idgagu/" class="fa fa-instagram"></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var i = 0;
+        var txt = 'Hello, I am Manas, A developer';
+        var speed = 100;
+        $(document).ready(function () {
+            $("#profile_links").hide();
+            typeWriter()
+        });
+        function typeWriter() {
+            if (i < txt.length) {
+                if (i < 6) {
+                    document.getElementById("t1").innerHTML += txt.charAt(i);
+                }
+                else if (i > 5 && i < 19) {
+                    document.getElementById("t2").innerHTML += txt.charAt(i);
+                }
+                else {
+                    document.getElementById("t3").innerHTML += txt.charAt(i);
+                }
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+            console.log(i)
+            if(i == 30){
+                $("#profile_links").show();
+            }
+        }
+    </script>
 </body>
+
 </html>
